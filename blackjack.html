@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <style>
+        .cKaarten{
+
+            font: "times new roman";
+            font-size:10px;
+            
+        }
+    </style>
+    <script>
+        var saldo = 20
+        var inzet = 0
+
+        function fLaadPagina() {  //Wanneer de pagina laadt start hij de GetSaldo en GetInzet functies
+
+            fGetSaldo();
+            fGetInzet();
+
+        }
+
+        function fInzetten() {
+
+            inzet = document.getElementById("inputInzet").value;
+            saldo = saldo - inzet; //haalt de inzet van je saldo af
+
+            fGetInzet();
+            fGetSaldo();
+
+        }
+
+        function fGetSaldo() //pakt het Saldo en plaatst deze in de DIV
+        {
+            console.log('in fGetSaldo')
+            var vDivSaldo = document.getElementById("divSaldo");
+            vDivSaldo.innerHTML = saldo;
+        }
+
+        function fGetInzet() //pakt de inzet en plaatst deze in de DIV
+        {
+            console.log('in fGetInzet')
+            var vDivInzet = document.getElementById("divInzet");
+            vDivInzet.innerHTML = inzet;
+        }
+
+
+
+    </script>
+</head>
+
+<body onload="fLaadPagina()">
+
+    <span>Huidig saldo: </span>
+    <span>€ <span id="divSaldo"></span></span>
+    <br>
+    <br>
+    <span>Huidige inzet: </span>
+    <span>€ <span id="divInzet"></span></span>
+    <br>
+    <br>
+    <a>Inzet: </a> <input type=text id=inputInzet>
+    <button onclick=fInzetten()>Inzetten</button>
+    <br>
+    <br>
+
+
+
+    <a>Spelen:</a>
+    <br>
+    <br>
+    <button onclick="fDelen()">Nog een kaart</button>   <button onclick="fStoppen()">Stoppen</button>
+    <br>
+    <br>
+    <a>Kaarten Speler:</a>
+    <br>
+    <div id=divSpelerKaart1 class=cKaarten>Placeholder Kaart 1</div>
+    <div id=divSpelerKaart2 class=cKaarten>Placeholder Kaart 2</div>
+    <div id=divSpelerKaart3 class=cKaarten>Placeholder Kaart 3</div>
+    <div id=divSpelerKaart4 class=cKaarten>Placeholder Kaart 4</div>
+    <div id=divSpelerKaart5 class=cKaarten>Placeholder Kaart 5</div>
+    <br>
+
+    <a>Kaarten Deler:</a>
+    <div id=divDelerKaart1 class=cKaarten>Placeholder Kaart 1</div>
+    <div id=divDelerKaart2 class=cKaarten>Placeholder Kaart 2</div>
+    <div id=divDelerKaart3 class=cKaarten>Placeholder Kaart 3</div>
+    <div id=divDelerKaart4 class=cKaarten>Placeholder Kaart 4</div>
+    <div id=divDelerKaart5 class=cKaarten>Placeholder Kaart 5</div>
+
+
+
+
+
+
+
+</body>
+
+
+</html>
