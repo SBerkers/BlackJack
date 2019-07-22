@@ -242,7 +242,37 @@
 
         }
 
+            //deze functie haalt alle div's leeg door ze de waarde "0" te geven.
+            
+            function veldenLeegmaken() {
+            document.getElementById("divKaart1").innerHTML = 0;
 
+            document.getElementById("divKaart2").innerHTML = 0;
+            
+            document.getElementById("divKaart3").innerHTML = 0;
+
+            document.getElementById("divKaart4").innerHTML = 0;
+
+            document.getElementById("divKaart5").innerHTML = 0;
+
+            document.getElementById("divKaart6").innerHTML = 0;
+            
+            document.getElementById("divWaarde1").innerHTML = 0;
+            
+            document.getElementById("divWaarde2").innerHTML = 0;
+
+            document.getElementById("divWaarde3").innerHTML = 0;
+
+            document.getElementById("divWaarde4").innerHTML = 0;
+
+            document.getElementById("divWaarde5").innerHTML = 0;
+
+            document.getElementById("divWaarde6").innerHTML = 0;
+            
+            document.getElementById("totaleWaarde").innerHTML = 0;
+            
+            document.getElementById("divWaardeDeler").innerHTML = 0;
+        }
 
 
 
@@ -361,4 +391,16 @@
 
 
     <button onclick="fKaartPakken()">Kaart pakken!</button> <button onclick="fPassen()">Stay</button>
+    <br><br>
+    <!--Deze button zorgt doormiddel van de functie veldenLeegmaken dat alle div's weer op 0 worden gezet wanneer je er op klikt-->
+    <input type="button" value="Spel opnieuw starten" onclick="veldenLeegmaken()">
 
+
+
+
+
+</body>
+
+
+
+</html>
