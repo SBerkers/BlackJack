@@ -1,0 +1,194 @@
+<html>
+<title>Blackjack!</title>
+
+<head>
+    <style>
+    .kaart {
+        background-color: #ffffff;
+        border-color: #000000;
+        border-width: 2px;
+        border-style: solid;
+        width: 50px;
+        height: 75px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+    .waarde {
+        background-color: #ffffff;
+        border-color: #000000;
+        border-width: 2px;
+        border-style: solid;
+        width: 50px;
+        height: 20px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: gold;
+    }
+    #totaleWaarde {
+        background-color: #ffffff;
+        border-color: #000000;
+        border-width: 2px;
+        border-style: solid;
+        width: 50px;
+        height: 20px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: lightblue;
+    }
+    .container {
+        display:flex;
+    }        
+    </style>
+
+    <script>
+        var alleKaartenArray = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];  //Alle kaarten in het deck 
+        var waardeKaarten = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "10", "10", "10", "11"]; //De waardes behorende bij de kaarten
+        //Deze functie voert 2 randomKaart functies uit en weergeeft de waardes van de twee random kaarten 
+        function fStartSpel(){
+            fSelectRandomKaart1();
+            fSelectRandomKaart2();
+            fWeergeefWaardeEersteKaart();
+            fWeergeefWaardeTweedeKaart();
+            fKaartenOptellen();
+        }
+        //Deze twee functies selecteren een random kaart en plaatsen deze in divKaart1 en divKaart2
+        function fSelectRandomKaart1(){
+            var randomKaart1 = alleKaartenArray[Math.floor(Math.random() * alleKaartenArray.length)];
+            document.getElementById("divKaart1").innerHTML = randomKaart1;
+        }
+        function fSelectRandomKaart2(){
+            var randomKaart2 = alleKaartenArray[Math.floor(Math.random() * alleKaartenArray.length)];
+            document.getElementById("divKaart2").innerHTML = randomKaart2;
+        }
+        //Deze twee functies weergeven de waardes van de eerste en tweede kaart in divWaarde1 en in divWaarde2 
+        function fWeergeefWaardeEersteKaart() { 
+          var waarde1 = document.getElementById("divKaart1").innerHTML; 
+          if(waarde1 == 2) {
+              document.getElementById("divWaarde1").innerHTML = 2;
+          }
+          if(waarde1 == 3) {
+              document.getElementById("divWaarde1").innerHTML = 3;
+          }
+          if(waarde1 == 4) {
+              document.getElementById("divWaarde1").innerHTML = 4;
+          }
+          if(waarde1 == 5) {
+              document.getElementById("divWaarde1").innerHTML = 5;
+          }
+          if(waarde1 == 6) {
+              document.getElementById("divWaarde1").innerHTML = 6;
+          }
+          if(waarde1 == 7) {
+              document.getElementById("divWaarde1").innerHTML = 7;
+          }
+          if(waarde1 == 8) {
+              document.getElementById("divWaarde1").innerHTML = 8;
+          }
+          if(waarde1 == 9) {
+              document.getElementById("divWaarde1").innerHTML = 9;
+          }
+          if(waarde1 == 10) {
+              document.getElementById("divWaarde1").innerHTML = 10;
+          }
+          if(waarde1 == "J") {
+              document.getElementById("divWaarde1").innerHTML = 10;
+          }
+          if(waarde1 == "Q") {
+              document.getElementById("divWaarde1").innerHTML = 10;
+          }
+          if(waarde1 == "K") {
+              document.getElementById("divWaarde1").innerHTML = 10;
+          }
+          if(waarde1 == "A") {
+              document.getElementById("divWaarde1").innerHTML = 11;
+          } 
+        }
+        function fWeergeefWaardeTweedeKaart(){
+            var waarde2 = document.getElementById("divKaart2").innerHTML; 
+          if(waarde2 == 2) {
+              document.getElementById("divWaarde2").innerHTML = 2;
+          }
+          if(waarde2 == 3) {
+              document.getElementById("divWaarde2").innerHTML = 3;
+          }
+          if(waarde2 == 4) {
+              document.getElementById("divWaarde2").innerHTML = 4;
+          }
+          if(waarde2 == 5) {
+              document.getElementById("divWaarde2").innerHTML = 5;
+          }
+          if(waarde2 == 6) {
+              document.getElementById("divWaarde2").innerHTML = 6;
+          }
+          if(waarde2 == 7) {
+              document.getElementById("divWaarde2").innerHTML = 7;
+          }
+          if(waarde2 == 8) {
+              document.getElementById("divWaarde2").innerHTML = 8;
+          }
+          if(waarde2 == 9) {
+              document.getElementById("divWaarde2").innerHTML = 9;
+          }
+          if(waarde2 == 10) {
+              document.getElementById("divWaarde2").innerHTML = 10;
+          }
+          if(waarde2 == "J") {
+              document.getElementById("divWaarde2").innerHTML = 10;
+          }
+          if(waarde2 == "Q") {
+              document.getElementById("divWaarde2").innerHTML = 10;
+          }
+          if(waarde2 == "K") {
+              document.getElementById("divWaarde2").innerHTML = 10;
+          }
+          if(waarde2 == "A") {
+              document.getElementById("divWaarde2").innerHTML = 11;
+          } 
+        }
+        //Deze functie telt de waarden van de twee kaarten bij elkaar op en geeft een alert als: waarde > 21
+        function fKaartenOptellen() {
+            var eersteWaarde = parseInt(document.getElementById("divWaarde1").innerHTML);
+            var tweedeWaarde = parseInt(document.getElementById("divWaarde2").innerHTML);
+            var totaleWaarde = eersteWaarde + tweedeWaarde;
+            document.getElementById("totaleWaarde").innerHTML = totaleWaarde;
+            if(totaleWaarde >= 21) {
+                alert("De totale waarde is 21 of meer");
+           }
+        }
+        
+        
+       
+    </script>
+
+</head>
+
+<body>
+
+<!--Deze button start het spel en voert de functie fStartSpel uit-->
+<input type=button value="Starten" id="bStartSpel" onclick="fStartSpel()"> 
+<br>
+<br>
+
+<!--Uitkomt van de twee fSelectRandomKaarten functies-->
+<div class="container">
+    <div class="kaart" id=divKaart1>0</div>
+    <br>
+    <div class="kaart" id=divKaart2>0</div>
+</div>
+
+<p>Waarde:</p>
+
+<!--Uitkomt van de fWeergeefWaardeEersteKaart en fWeergeefWaardeTweedeKaart functies-->
+<div class="container">
+    <div class="waarde" id=divWaarde1>0</div>
+    <br>
+    <div class="waarde" id=divWaarde2>0</div>
+</div>
+
+<p>Totale waarde:</p>
+<!--De totale waarde van de twee kaarten opgeteld komt in deze div te staan-->
+<div id=totaleWaarde>0</div>
+
+</body>
+
+</html>
